@@ -260,21 +260,6 @@ document.addEventListener("DOMContentLoaded", function () {
         updateLocalStorage();
         displayCartProducts();
     }
-
-    cartProductsList.addEventListener('click', function (event) {
-        if (event.target.classList.contains('remove')) {
-            var itemIndex = event.target.getAttribute('data-index');
-            removeProduct(itemIndex);
-        } else if (event.target.classList.contains('decrease')) {
-            var itemIndex = event.target.getAttribute('data-index');
-            decreaseQuantity(itemIndex);
-        } else if (event.target.classList.contains('increase')) {
-            var itemIndex = event.target.getAttribute('data-index');
-            increaseQuantity(itemIndex);
-        }
-    });
-
-    displayCartProducts();
 });
 
 var navToggle = document.getElementById("nav-toggle");
