@@ -9,7 +9,8 @@
 
 .background{
   z-index: -1;
-  margin-top: -386px;
+  margin-top: -435px;
+  margin-left: -40px;
 }
 body {
   font-family: 'Poppins', sans-serif;
