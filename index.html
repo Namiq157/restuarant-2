@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+    <html lang="en">
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+            <link rel="stylesheet" href="./styles.css">
+
+            <title>Menu</title>
+        </head>
+        <body>
+            <a href="#" class="scrolltop" id="scroll-top">
+                <i class='bx bx-chevron-up scrolltop__icon'></i>
+            </a>
+            <header class="l-header" id="header">
+                <nav class="nav bd-container">
+                    <a href="#" class="nav__logo">Dhabi Restaurant</a>
+                    <div class="nav__menu" id="nav-menu">
+                        <ul class="nav__list">
+                            <li class="nav__item"><a href="#home" class="nav__link active-link">Home</a></li>
+                            <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                            <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                            <li class="nav__item"><a href="#menu" class="nav__link">Menu</a></li>
+                            <li class="nav__item"><a href="#contact" class="nav__link">Contact us</a></li>
+                            <li><i class='bx bx-moon change-theme' id="theme-button"></i></li>
+                        </ul>
+                    </div>
+    <img class="sign-up" id="sign-up-btn" src="./image/user.svg" alt="sign-in button">
+
+<div id="auth-popup" class="popup" style="display: none;">
+    <div class="popup-content">
+        <span id="close-popup" class="close-btn">&times;</span>
+        <div class="auth-selection">
+            <button id="sign-up-select" class="auth-option">Sign Up</button>
+            <button id="log-in-select" class="auth-option">Log In</button>
+        </div>
+        <div id="sign-up-form" class="auth-form">
+            <h2>Sign Up</h2>
+            <form>
+                <label for="signup-name">Name</label>
+                <input type="text" id="signup-name" name="name">
+                <label for="signup-email">Email</label>
+                <input type="email" id="signup-email" name="email">
+                <label for="signup-password">Password</label>
+                <input type="password" id="signup-password" name="password">
+                <button type="submit">Sign Up</button>
+            </form>
+        </div>
+        <div id="log-in-form" class="auth-form" style="display: none;">
+            <h2>Log In</h2>
+            <form>
+                <label for="login-email">Email</label>
+                <input type="email" id="login-email" name="email">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="password">
+                <button type="submit">Log In</button>
+            </form>
+        </div>
+    </div>
+</div>                  
+                    <button class="nav__toggle" id="nav-toggle"> ☰ </button>
+                    <div class="cart-container">
+                        <img src="./image/buy.svg" alt="card-button">
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                </nav>
+            </header>
+            
+            <div class="cart-modal" id="cart-modal">
+                <h3>Alış-veriş səbəti</h3>
+                <ul id="cart-list"></ul>
+            </div>
+
+            <main class="l-main">
+                <section class="home" id="home">
+                    <div class="home__container bd-container bd-grid">
+                        <div class="home__data">
+                            <h1 class="home__title">All Delicious <br>
+                                Asian</h1>
+                            <h2 class="home__subtitle">Eggs, Salad, fruits, pasta </h2>
+                            <a href="#menu" class="button">Find for more</a>
+                        </div>
+                        <img src="./image/eggsalad.svg" alt="" class="home__img">
+                    </div>
+                </section>
+                
+                <section class="about section bd-container" id="about">
+                    <div class="about__container  bd-grid">
+                        <div class="about__data">
+                            <span class="section-subtitle about__initial">About us</span>
+                            <h2 class="section-title about__initial">Welcome to our <br> Dhabi Restaurant</h2>
+                            <p class="about__description">food, substance consisting essentially of protein, carbohydrate, fat, and other nutrients used in the body of an organism to sustain growth and vital processes and to furnish energy. The absorption and utilization of food by the body is fundamental to nutrition and is facilitated by digestion</p>
+                        </div>
+
+                        <img src="./image/salad2.svg" alt="" class="about__img">
+                    </div>
+                </section>
+
+                <section class="services section bd-container" id="services">
+                    <span class="section-subtitle">Offering</span>
+                    <h2 class="section-title">Our amazing services</h2>
+
+                    <div class="services__container bd-grid">
+                        <div class="menu__content">
+                            <img src="./image/food.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Asian Salad</h3>
+                            <span class="menu__detail">Delicious dish</span>
+                            <span class="menu__preci">$22.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>                           
+                        </div>
+                
+                        <div class="menu__content">
+                            <img src="./image/food1.svg" style="border-radius: 50%; height: 130px" alt="" class="menu__img">
+                            <h3 class="menu__name">Fattoush salad</h3>
+                            <span class="menu__detail">Delicious dish</span>
+                            <span class="menu__preci">$6.50</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>
+                
+                        <div class="menu__content">
+                            <img src="./image/food2.svg" style="border-radius: 50%; height: 130px" alt="" class="menu__img">
+                            <h3 class="menu__name">Egg vegi salad</h3>
+                            <span class="menu__detail">Delicious dish</span>
+                            <span class="menu__preci">$13.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>
+                        <div class="menu__content hidden">
+                            <img src="./image/food3.svg" style="border-radius: 50%; height: 130px" alt="" class="menu__img">
+                            <h3 class="menu__name">Chicken salad</h3>
+                            <span class="menu__detail">Delicious dish</span>
+                            <span class="menu__preci">$15.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>
+                
+                        <div class="menu__content hidden">
+                            <img src="./image/food4.svg" style="border-radius: 50%; height: 130px" alt="" class="menu__img">
+                            <h3 class="menu__name">Fattoush salad</h3>
+                            <span class="menu__detail">Delicious dish</span>
+                            <span class="menu__preci">$18.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>
+                
+                        <div class="menu__content hidden">
+                            <img src="./image/food5.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Nepali Vegetable Momos</h3>
+                            <span class="menu__detail">Delicious dish</span>
+                            <span class="menu__preci">$12.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>    
+                        <div class="menu__content hidden">
+                            <img src="./image/food6.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Vegetable salad</h3>
+                            <span class="menu__detail">Delicious dish</span>
+                            <span class="menu__preci">$11.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>    
+                        <div class="menu__content hidden">
+                            <img src="./image/food7.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Lumpia with Suace</h3>
+                            <span class="menu__detail">Lumpia with Suace</span>
+                            <span class="menu__preci">$9,80</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>    
+                        <div class="menu__content hidden">
+                            <img src="./image/food8.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Tofu Chili</h3>
+                            <span class="menu__detail">Tofu Chili</span>
+                            <span class="menu__preci">$19.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>    
+                        <div class="menu__content hidden">
+                            <img src="./image/food9.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Cavolo Nero Salad</h3>
+                            <span class="menu__detail">Cavolo Nero Salad</span>
+                            <span class="menu__preci">$20.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>    
+                        <div class="menu__content hidden">
+                            <img src="./image/food10.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Skewers Salad</h3>
+                            <span class="menu__detail">Skewers Salad</span>
+                            <span class="menu__preci">$14.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div>    
+                        <div class="menu__content hidden">
+                            <img src="./image/food11.svg" alt="" class="menu__img">
+                            <h3 class="menu__name">Keto Salad</h3>
+                            <span class="menu__detail">Keto Salad</span>
+                            <span class="menu__preci">$10.00</span>
+                            <button class="button menu__button"><i class='bx bx-cart-alt'></i></button>
+                        </div> 
+
+   
+                    </div>
+                    <div>
+                        <button id="view-all-menu" class="menu__link">View All Menu</button>
+                        <button id="hide-menu" class="menu__link hidden">Hide Menu</button>
+                    </div>
+                </section>
+                
+
+                <section class="app section bd-container">
+                    <div class="app__container bd-grid">
+                        <div class="app__data">
+                            <span class="section-subtitle app__initial">Testimonials</span>
+                            <h2 class="section-title app__initial">Our Dhabi Restaurant Expert Chef</h2>
+                            <p class="app__description">food, substance consisting essentially of protein, carbohydrate, fat, and other nutrients used in the body of an organism to sustain growth and vital processes and to furnish energy. The absorption and utilization of food by the body is fundamental to nutrition and is facilitated by digestion</p>
+                        </div>
+                        <img src="./image/rectangle.svg" alt="" class="background">
+                        <img src="./image/maskgroup.svg" alt="" class="app__img">
+                    </div>
+                </section>
+
+                <section class="contact section bd-container" id="contact">
+                    <div class="contact__container bd-grid">
+                        <div class="contact__data">
+                            <span class="section-subtitle contact__initial">Let's talk</span>
+                            <h2 class="section-title contact__initial">Contact us</h2>
+                            <p class="contact__description">If you want to reserve a table in our restaurant, contact us and we will attend you quickly, with our 24/7 chat service.</p>
+                        </div>
+<button class="button" id="contact-btn">Contact With Us</button>
+<div id="popup-window" class="popup" style="display: none;">
+    <div class="popup-content">
+        <p>Telefon Nömrəsi: 051-360-27-67</p>
+        <button id="call-button" class="button">Zəng et</button>
+    </div>
+</div>                 
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer section bd-container">
+                <div class="footer__container bd-grid">
+                    <div class="footer__content">
+                        <a href="#" class="footer__logo">Tasty Food</a>
+                        <span class="footer__description">Restaurant</span>
+                        <div>
+                            <a href="https://www.facebook.com/" class="footer__social"><i class='bx bxl-facebook'></i></a>
+                            <a href="https://www.instagram.com/" class="footer__social"><i class='bx bxl-instagram'></i></a>
+                            <a href="https://x.com/" class="footer__social"><i class='bx bxl-twitter'></i></a>
+                        </div>
+                    </div>
+
+                    <div class="footer__content">
+                        <h3 class="footer__title">Services</h3>
+                        <ul>
+                            <li>Delivery</li>
+                            <li> Pricing</li>
+                            <li> Fast food</li>
+                            <li> Reserve your spot</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content">
+                        <h3 class="footer__title">Information</h3>
+                        <ul>
+                            <li>Event</li>
+                            <li>Contact us</li>
+                            <li>Privacy policy</li>
+                            <li>Terms of services</li>
+                        </ul>
+                    </div>
+
+                    <div class="footer__content">
+                        <h3 class="footer__title">About us</h3>
+                        <ul>
+                            <li>Dhabi Restaurant</li>
+                            <li>🏠 Ganjlik</li>
+                            <li>📞 050-570-00-57</li>
+                            <li>✉️ dhabirestaurant@gmail.com</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <p class="footer__copy"> 2024. All right reserved</p>
+            </footer>
+
+            <script src="./js/main.js"></script>
+        </body>
+    </html>
