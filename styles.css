@@ -66,6 +66,7 @@ ul {
 }
 
 .bd-grid {
+  margin-top: 70px;
   display: grid;
   gap: 1.5rem;
 }
@@ -382,6 +383,7 @@ ul {
 
   .nav {
     padding: 0 4rem;
+    margin-top: 60px;
   }
 
   .menu__container {
