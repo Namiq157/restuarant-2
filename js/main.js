@@ -1,36 +1,24 @@
-'use strict';
+"use strict";
 
-var showMenu = function (toggleId, navId) {
-    var toggle = document.getElementById(toggleId),
-        nav = document.getElementById(navId);
-
-    if (toggle && nav) {
-        toggle.addEventListener('click', function () {
-            nav.classList.toggle('show-menu');
-        });
-    }
-};
-showMenu('nav-toggle', 'nav-menu');
-
-var navLink = document.querySelectorAll('.nav__link');
+let navLink = document.querySelectorAll('.nav__link');
 
 function linkAction() {
-    var navMenu = document.getElementById('nav-menu');
+    let navMenu = document.getElementById('nav-menu');
     navMenu.classList.remove('show-menu');
 }
 navLink.forEach(function (n) {
     n.addEventListener('click', linkAction);
 });
 
-var sections = document.querySelectorAll('section[id]');
+let sections = document.querySelectorAll('section[id]');
 
 function scrollActive() {
-    var scrollY = window.pageYOffset;
+    let scrollY = window.pageYOffset;
 
     sections.forEach(function (current) {
-        var sectionHeight = current.offsetHeight;
-        var sectionTop = current.offsetTop - 50;
-        var sectionId = current.getAttribute('id');
+        let sectionHeight = current.offsetHeight;
+        let sectionTop = current.offsetTop - 50;
+        let sectionId = current.getAttribute('id');
 
         if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
             document.querySelector('.nav__menu a[href*=' + sectionId + ']').classList.add('active-link');
@@ -42,30 +30,30 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive);
 
 function scrollHeader() {
-    var nav = document.getElementById('header');
+    let nav = document.getElementById('header');
     if (this.scrollY >= 200) nav.classList.add('scroll-header');
     else nav.classList.remove('scroll-header');
 }
 window.addEventListener('scroll', scrollHeader);
 
 function scrollTop() {
-    var scrollTop = document.getElementById('scroll-top');
+    let scrollTop = document.getElementById('scroll-top');
     if (this.scrollY >= 560) scrollTop.classList.add('show-scroll');
     else scrollTop.classList.remove('show-scroll');
 }
 window.addEventListener('scroll', scrollTop);
 
-var themeButton = document.getElementById('theme-button');
-var darkTheme = 'dark-theme';
-var iconTheme = 'bx-sun';
+let themeButton = document.getElementById('theme-button');
+let darkTheme = 'dark-theme';
+let iconTheme = 'bx-sun';
 
-var selectedTheme = localStorage.getItem('selected-theme');
-var selectedIcon = localStorage.getItem('selected-icon');
+let selectedTheme = localStorage.getItem('selected-theme');
+let selectedIcon = localStorage.getItem('selected-icon');
 
-var getCurrentTheme = function () {
+let getCurrentTheme = function () {
     return document.body.classList.contains(darkTheme) ? 'dark' : 'light';
 };
-var getCurrentIcon = function () {
+let getCurrentIcon = function () {
     return themeButton.classList.contains(iconTheme) ? 'bx-moon' : 'bx-sun';
 };
 
@@ -99,12 +87,12 @@ document.getElementById('call-button').addEventListener('click', function () {
     window.location.href = 'tel:0513602767';
 });
 
-var cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
-var cartProductsList = document.getElementById('cart-products-list');
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {};
+let cartProductsList = document.getElementById('cart-products-list');
 
 function displayCartProducts() {
-    for (var product in cartItems) {
-        var item = document.createElement('li');
+    for (let product in cartItems) {
+        let item = document.createElement('li');
         item.innerText = product + ' - ' + cartItems[product] + ' dənə';
         cartProductsList.appendChild(item);
     }
@@ -114,15 +102,15 @@ displayCartProducts();
 
 document.querySelectorAll('.menu__button').forEach(function (button) {
     button.addEventListener('click', function () {
-        var menuItem = this.parentElement;
-        var product = {
+        let menuItem = this.parentElement;
+        let product = {
             name: menuItem.querySelector('.menu__name').innerText,
             price: menuItem.querySelector('.menu__preci').innerText,
         };
 
-        var cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-        var existingProduct = cart.find(function (item) {
+        let existingProduct = cart.find(function (item) {
             return item.name === product.name;
         });
 
@@ -135,21 +123,21 @@ document.querySelectorAll('.menu__button').forEach(function (button) {
 
         localStorage.setItem('cart', JSON.stringify(cart));
 
-        var cartCountElement = document.getElementById('cart-count');
-        var currentCount = parseInt(cartCountElement.innerText) || 0;
+        let cartCountElement = document.getElementById('cart-count');
+        let currentCount = parseInt(cartCountElement.innerText) || 0;
         cartCountElement.innerText = currentCount + 1;
     });
 });
 
-var signUpBtn = document.getElementById('sign-up-btn');
-var authPopup = document.getElementById('auth-popup');
-var closePopup = document.getElementById('close-popup');
-var signUpSelect = document.getElementById('sign-up-select');
-var logInSelect = document.getElementById('log-in-select');
-var signUpForm = document.getElementById('sign-up-form');
-var logInForm = document.getElementById('log-in-form');
-var signUpSubmit = signUpForm.querySelector('button[type="submit"]');
-var logInSubmit = logInForm.querySelector('button[type="submit"]');
+let signUpBtn = document.getElementById('sign-up-btn');
+let authPopup = document.getElementById('auth-popup');
+let closePopup = document.getElementById('close-popup');
+let signUpSelect = document.getElementById('sign-up-select');
+let logInSelect = document.getElementById('log-in-select');
+let signUpForm = document.getElementById('sign-up-form');
+let logInForm = document.getElementById('log-in-form');
+let signUpSubmit = signUpForm.querySelector('button[type="submit"]');
+let logInSubmit = logInForm.querySelector('button[type="submit"]');
 
 signUpBtn.addEventListener('click', function () {
     authPopup.style.display = 'flex';
@@ -186,14 +174,14 @@ logInSubmit.addEventListener('click', function (event) {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-    var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    var cartProductsList = document.getElementById('cart-products-list');
-    var totalPriceElement = document.getElementById('total-price');
+    let cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    let cartProductsList = document.getElementById('cart-products-list');
+    let totalPriceElement = document.getElementById('total-price');
 
-    var productPrices = {};
+    let productPrices = {};
     document.querySelectorAll('.menu__content').forEach(function (menuItem) {
-        var productName = menuItem.querySelector('.menu__name').innerText;
-        var productPrice = parseFloat(menuItem.querySelector('.menu__preci').innerText.replace('$', ''));
+        let productName = menuItem.querySelector('.menu__name').innerText;
+        let productPrice = parseFloat(menuItem.querySelector('.menu__preci').innerText.replace('$', ''));
         productPrices[productName] = productPrice;
     });
 
@@ -202,9 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     function updateTotalPrice() {
-        var total = 0;
+        let total = 0;
         cartItems.forEach(function (item) {
-            var itemPrice = productPrices[item.name];
+            let itemPrice = productPrices[item.name];
             if (itemPrice) {
                 total += itemPrice * item.quantity;
             }
@@ -215,12 +203,12 @@ document.addEventListener("DOMContentLoaded", function () {
     function displayCartProducts() {
         cartProductsList.innerHTML = '';
         if (cartItems.length === 0) {
-            var noItemsMessage = document.createElement('li');
+            let noItemsMessage = document.createElement('li');
             noItemsMessage.innerText = 'Səbətiniz boşdur';
             cartProductsList.appendChild(noItemsMessage);
         } else {
             cartItems.forEach(function (product, itemIndex) {
-                var item = document.createElement('li');
+                let item = document.createElement('li');
                 item.classList.add('cart-item');
 
                 item.innerHTML =
@@ -261,15 +249,15 @@ document.addEventListener("DOMContentLoaded", function () {
         displayCartProducts();
     }
 
-    cartProductsList.addEventListener('click', function (event) {
+    cartProductsList.addEventListener('click',  (event) => {
         if (event.target.classList.contains('remove')) {
-            var itemIndex = event.target.getAttribute('data-index');
+            let itemIndex = event.target.getAttribute('data-index');
             removeProduct(itemIndex);
         } else if (event.target.classList.contains('decrease')) {
-            var itemIndex = event.target.getAttribute('data-index');
+            let itemIndex = event.target.getAttribute('data-index');
             decreaseQuantity(itemIndex);
         } else if (event.target.classList.contains('increase')) {
-            var itemIndex = event.target.getAttribute('data-index');
+            let itemIndex = event.target.getAttribute('data-index');
             increaseQuantity(itemIndex);
         }
     });
@@ -277,8 +265,8 @@ document.addEventListener("DOMContentLoaded", function () {
     displayCartProducts();
 });
 
-var navToggle = document.getElementById("nav-toggle");
-var navMenu = document.getElementById("nav-menu");
+let navToggle = document.getElementById("nav-toggle");
+let navMenu = document.getElementById("nav-menu");
 
 function handleNavToggle() {
     if (navToggle && navMenu) {
@@ -299,22 +287,24 @@ window.addEventListener('resize', handleNavToggle);
 
 handleNavToggle();
 
-var viewAllMenuButton = document.getElementById("view-all-menu");
-var hideMenuButton = document.getElementById("hide-menu");
-var hiddenMenuItems = document.querySelectorAll(".menu__content.hidden");
+let viewAllMenuButton = document.getElementById("view-all-menu");
+let hideMenuButton = document.getElementById("hide-menu");
+let hiddenMenuItems = document.querySelectorAll(".menu__content.hidden");
 
-viewAllMenuButton.addEventListener("click", function () {
-    hiddenMenuItems.forEach(function (item) {
-        item.classList.remove("hidden");
+if (viewAllMenuButton && hideMenuButton) {
+    viewAllMenuButton.addEventListener("click", function () {
+        hiddenMenuItems.forEach(function (item) {
+            item.classList.remove("hidden");
+        });
+        viewAllMenuButton.classList.add("hidden");
+        hideMenuButton.classList.remove("hidden");
     });
-    viewAllMenuButton.classList.add("hidden");
-    hideMenuButton.classList.remove("hidden");
-});
 
-hideMenuButton.addEventListener("click", function () {
-    hiddenMenuItems.forEach(function (item) {
-        item.classList.add("hidden");
+    hideMenuButton.addEventListener("click", function () {
+        hiddenMenuItems.forEach(function (item) {
+            item.classList.add("hidden");
+        });
+        viewAllMenuButton.classList.remove("hidden");
+        hideMenuButton.classList.add("hidden");
     });
-    viewAllMenuButton.classList.remove("hidden");
-    hideMenuButton.classList.add("hidden");
-});
+}
